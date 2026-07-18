@@ -1,0 +1,47 @@
+# =========================
+# Visual Studio
+# =========================
+
+.vs/
+*.VC.db
+*.VC.opendb
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build Results
+Debug/
+Release/
+x64/
+x86/
+build/
+
+# C++ compiled files
+*.obj
+*.o
+*.pdb
+*.ilk
+*.lib
+*.dll
+*.exe
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# =========================
+# Test / Coverage
+# =========================
+*.coverage
+*.coveragexml
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+``
