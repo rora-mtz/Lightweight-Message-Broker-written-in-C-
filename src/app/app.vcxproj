@@ -145,7 +145,11 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\core\log.cpp" />
     <ClCompile Include="app.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\core\log.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
