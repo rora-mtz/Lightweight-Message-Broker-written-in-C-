@@ -3,9 +3,12 @@
  * @brief アプリケーションエントリポイント
  */
 
-#include "../core/log.h"
+#include "../transport/TcpServer.h"
 
 int main() {
-    core::logInfo("LightMessageBroker started");
-    return 0;
-};
+
+		// TCPサーバ起動
+		transport::startServer(8080);
+		
+		return 0;
+}

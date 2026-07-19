@@ -16,6 +16,9 @@
     <Filter Include="core">
       <UniqueIdentifier>{9ae2df3f-3d00-4963-a88c-d946bdca6ed4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="transport">
+      <UniqueIdentifier>{54f84545-3603-48cb-a055-a826441e4f16}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="app.cpp">
@@ -24,10 +27,16 @@
     <ClCompile Include="..\core\log.cpp">
       <Filter>core</Filter>
     </ClCompile>
+    <ClCompile Include="..\transport\TcpServer.cpp">
+      <Filter>transport</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\core\log.h">
       <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\transport\TcpServer.h">
+      <Filter>transport</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
