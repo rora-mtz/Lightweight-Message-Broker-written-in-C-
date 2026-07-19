@@ -12,7 +12,7 @@
  */
 
 #include "TcpServer.h"
-#include "../core/log.h"
+#include "../core/Log.h"
 #include <winsock2.h>
 #include <iostream>
 

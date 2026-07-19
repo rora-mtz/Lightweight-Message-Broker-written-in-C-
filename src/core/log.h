@@ -5,7 +5,8 @@
 
 #include <string>
 
-namespace core {
+namespace core 
+{
 
     // ログレベル
     enum class LogLevel

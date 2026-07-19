@@ -16,10 +16,11 @@
  * - 非同期ログ対応
  */
 
-#include "log.h"
+#include "Log.h"
 #include <iostream>
 
-namespace core {
+namespace core
+{
 
     /**
      * @brief ログレベル文字列取得用関数
@@ -30,19 +31,21 @@ namespace core {
      * 受け取ったログレベルに応じた文字列を返す。
      *
      */
-    std::string levelToString(LogLevel level) {
+    std::string levelToString(LogLevel level) 
+    {
 
-        switch (level) {
-        case LogLevel::Debug:
-            return "DEBUG";
-        case LogLevel::Info:
-            return "INFO";
-        case LogLevel::Warn:
-            return "WARN";
-        case LogLevel::Error: 
-            return "ERROR";
-        default: 
-            return "UNKNOWN";
+        switch (level)
+        {
+            case LogLevel::Debug:
+                return "DEBUG";
+            case LogLevel::Info:
+                return "INFO";
+            case LogLevel::Warn:
+                return "WARN";
+            case LogLevel::Error: 
+                return "ERROR";
+            default: 
+                return "UNKNOWN";
         }
     }
 
@@ -64,7 +67,8 @@ namespace core {
      * - スレッドセーフではない
      * - 出力先は固定（std::cout）
      */
-    void log(LogLevel level, const std::string& msg) {
+    void log(LogLevel level, const std::string& msg)
+    {
         std::cout << "[" << levelToString(level) << "] " << msg << std::endl;
     }
 
@@ -77,19 +81,23 @@ namespace core {
      * ログを出力する関数のラッパー関数。
      * 
      */
-    void logDebug(const std::string & msg) {
+    void logDebug(const std::string & msg) 
+    {
         log(LogLevel::Debug, msg);
     }
 
-    void logInfo(const std::string & msg) {
+    void logInfo(const std::string & msg)
+    {
         log(LogLevel::Info, msg);
     }
 
-    void logWarn(const std::string & msg) {
+    void logWarn(const std::string & msg) 
+    {
         log(LogLevel::Warn, msg);
     }
 
-    void logError(const std::string & msg) {
+    void logError(const std::string & msg)
+    {
         log(LogLevel::Error, msg);
     }
 
