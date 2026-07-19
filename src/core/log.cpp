@@ -22,12 +22,38 @@
 namespace core {
 
     /**
-     * @brief ログメッセージを出力する
+     * @brief ログレベル文字列取得用関数
      *
-     * @param msg 出力するメッセージ
+     * @param level ログレベル
      *
      * @details
-     * 現在は標準出力に対してログを出力する。
+     * 受け取ったログレベルに応じた文字列を返す。
+     *
+     */
+    std::string levelToString(LogLevel level) {
+
+        switch (level) {
+        case LogLevel::Debug:
+            return "DEBUG";
+        case LogLevel::Info:
+            return "INFO";
+        case LogLevel::Warn:
+            return "WARN";
+        case LogLevel::Error: 
+            return "ERROR";
+        default: 
+            return "UNKNOWN";
+        }
+    }
+
+    /**
+     * @brief ログメッセージを出力する
+     *
+     * @param level ログレベル
+     * @param msg   出力するメッセージ
+     *
+     * @details
+     * 取得したログレベルに応じてログを出力する。
      *
      * なぜこの設計か:
      * - ログ機能は全体で利用されるためcore層に配置
@@ -38,8 +64,33 @@ namespace core {
      * - スレッドセーフではない
      * - 出力先は固定（std::cout）
      */
-    void log(const std::string& msg) {
-        std::cout << "[INFO] " << msg << std::endl;
+    void log(LogLevel level, const std::string& msg) {
+        std::cout << "[" << levelToString(level) << "] " << msg << std::endl;
+    }
+
+    /**
+     * @brief ログメッセージ出力ラッパー関数
+     *
+     * @param msg   出力するメッセージ
+     *
+     * @details
+     * ログを出力する関数のラッパー関数。
+     * 
+     */
+    void logDebug(const std::string & msg) {
+        log(LogLevel::Debug, msg);
+    }
+
+    void logInfo(const std::string & msg) {
+        log(LogLevel::Info, msg);
+    }
+
+    void logWarn(const std::string & msg) {
+        log(LogLevel::Warn, msg);
+    }
+
+    void logError(const std::string & msg) {
+        log(LogLevel::Error, msg);
     }
 
 }
