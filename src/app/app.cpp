@@ -6,6 +6,6 @@
 #include "../core/log.h"
 
 int main() {
-    core::log("LightMessageBroker started");
+    core::logInfo("LightMessageBroker started");
     return 0;
 };
