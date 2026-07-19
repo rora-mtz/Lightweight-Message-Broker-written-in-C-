@@ -146,10 +146,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\core\log.cpp" />
+    <ClCompile Include="..\transport\TcpServer.cpp" />
     <ClCompile Include="app.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\core\log.h" />
+    <ClInclude Include="..\transport\TcpServer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
